@@ -6,8 +6,8 @@
     <title>Project Magpie</title>
     <style>
         body {
-            background-color: #000;
-            color: #0f0;
+            background-color: #000000ef;
+            color: rgb(79, 252, 79);
             font-family: monospace;
             margin: 0;
             padding: 0;
@@ -28,7 +28,7 @@
         #input {
             background: none;
             border: none;
-            color: #0f0;
+            color: rgb(79, 252, 79);
             flex-grow: 1;
             outline: none;
         }
@@ -39,11 +39,11 @@
         <pre>
     ,---------------------------,
     |  /---------------------\  |
+    | |       WELCOME TO      | |
+    | |    Project - Magpie   | |
     | |                       | |
-    | |        Project        | |
-    | |                       | |
-    | |        Magpie         | |
-    | |                       | |
+    | |   // Joseph Dengler   | |
+    | |      Portfolio //     | |
     |  \_____________________/  |
     |___________________________|
   ,---\_____     []     _______/--------,
@@ -57,10 +57,14 @@
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Welcome to my Portfolio, have a play around or switch to SIMPLE VIEW.
+
+Type HELP for commands!
 </pre>
 <div id="output"></div>
 <div id="input-line">
-    <span>$</span>
+    <span>></span>
     <input type="text" id="input" autofocus>
 </div>
 </div>
@@ -82,10 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (input.toUpperCase() === 'HELP') {
             output(`
 Available commands:
-HELP - Show this help message
+ShowPROJX - Preview some completed favorite projects.
+
+
 `);
         } else {
-            output(`Command not found: ${input}`);
+            output(`Command not recognized: ${input}
+            Please type HELP for assistance.`);
         }
     }
 
