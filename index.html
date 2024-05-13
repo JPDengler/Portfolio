@@ -53,56 +53,51 @@
 |  _ _ _                 [-------]  |   |    (
 |  o o o                 [-------]  |  /     _)_
 |__________________________________ | /     / " /
-/-------------------------------------/|   (  )/
-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
+/--------------------------------------/|   (  )/
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/- /
+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Welcome to my Portfolio, have a play around or switch to SIMPLE VIEW.
 
 Type HELP for commands!
-</pre>
-<div id="output"></div>
-<div id="input-line">
-    <span>></span>
-    <input type="text" id="input" autofocus>
-</div>
-</div>
+        </pre>
+        <div id="output"></div>
+        <div id="input-line">
+            <span>></span>
+            <input type="text" id="input" autofocus>
+        </div>
+    </div>
+    <script src="command.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputElement = document.getElementById('input');
+            const outputElement = document.getElementById('output');
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const inputElement = document.getElementById('input');
-    const outputElement = document.getElementById('output');
+            inputElement.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    const input = inputElement.value.trim();
+                    processInput(input);
+                    inputElement.value = '';
+                }
+            });
 
-    inputElement.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            const input = inputElement.value.trim();
-            processInput(input);
-            inputElement.value = '';
-        }
-    });
+            function processInput(input) {
+                const command = commands[input.toUpperCase()];
+                if (command) {
+                    output(command);
+                } else {
+                    output(`Command not recognized: ${input}\nPlease type HELP for assistance.`);
+                }
+            }
 
-    function processInput(input) {
-        if (input.toUpperCase() === 'HELP') {
-            output(`
-Available commands:
-ShowPROJX - Preview some completed favorite projects.
-
-
-`);
-        } else {
-            output(`Command not recognized: ${input}
-            Please type HELP for assistance.`);
-        }
-    }
-
-    function output(text) {
-        const pre = document.createElement('pre');
-        pre.textContent = text;
-        outputElement.appendChild(pre);
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-});
-</script>
+            function output(text) {
+                const pre = document.createElement('pre');
+                pre.textContent = text;
+                outputElement.appendChild(pre);
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        });
+    </script>
 </body>
 </html>
