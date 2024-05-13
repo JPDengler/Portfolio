@@ -3,16 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tab title -->
     <title>Project Magpie</title>
     <style>
         body {
-            font-family: monospace; /* Use a monospace font for proper alignment */
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+        #terminal {
+            width: 100%;
+            height: 100vh;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        #input-line {
+            display: flex;
+        }
+        #input-line > span {
+            margin-right: 5px;
+        }
+        #input {
+            background: none;
+            border: none;
+            color: #0f0;
+            flex-grow: 1;
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <pre>
+    <div id="terminal">
+        <pre>
     ,---------------------------,
     |  /---------------------\  |
     | |                       | |
@@ -34,6 +58,44 @@
 /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </pre>
-    <p>BLANK</p>
+<div id="output"></div>
+<div id="input-line">
+    <span>$</span>
+    <input type="text" id="input" autofocus>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const inputElement = document.getElementById('input');
+    const outputElement = document.getElementById('output');
+
+    inputElement.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            const input = inputElement.value.trim();
+            processInput(input);
+            inputElement.value = '';
+        }
+    });
+
+    function processInput(input) {
+        if (input.toUpperCase() === 'HELP') {
+            output(`
+Available commands:
+HELP - Show this help message
+`);
+        } else {
+            output(`Command not found: ${input}`);
+        }
+    }
+
+    function output(text) {
+        const pre = document.createElement('pre');
+        pre.textContent = text;
+        outputElement.appendChild(pre);
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+});
+</script>
 </body>
 </html>
