@@ -4,39 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Magpie</title>
-    <style>
-        body {
-            background-color: #000000ef;
-            color: rgb(79, 252, 79);
-            font-family: monospace;
-            margin: 0;
-            padding: 0;
-        }
-        #terminal {
-            width: 100%;
-            height: 100vh;
-            padding: 10px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
-        #input-line {
-            display: flex;
-        }
-        #input-line > span {
-            margin-right: 5px;
-        }
-        #input {
-            background: none;
-            border: none;
-            color: rgb(79, 252, 79);
-            flex-grow: 1;
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="terminal">
-        <pre>
+    <div class="monitor">
+        <div id="terminal">
+            <pre>
     ,---------------------------,
     |  /---------------------\  |
     | |       WELCOME TO      | |
@@ -61,11 +34,12 @@
 Welcome to my Portfolio, have a play around or switch to SIMPLE VIEW.
 
 Type HELP for commands!
-        </pre>
-        <div id="output"></div>
-        <div id="input-line">
-            <span>></span>
-            <input type="text" id="input" autofocus>
+            </pre>
+            <div id="output"></div>
+            <div id="input-line">
+                <span>></span>
+                <input type="text" id="input" autofocus>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>

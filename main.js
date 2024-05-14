@@ -5,8 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     inputElement.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             const input = inputElement.value.trim();
-            command(input);
-            inputElement.value = '';
+            if (input) {
+                output(`> ${input}`); // Output the command
+                command(input);
+                inputElement.value = '';
+            }
         }
     });
 
@@ -16,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 output(`
 Available commands:
 - showprojx: Preview some completed favorite projects.
+- currentwork: Preview ongoing projects.
                 `);
                 break;
 
@@ -30,10 +34,11 @@ CS-300: Data Structures and Algorithms
 
             case 'currentwork':
                 output(`ProjectBMO - Creating a real life BMO
-                from the show Adventure Time with RaspyberryPI,
-                Python, OpenAI, and speech recongition!
+from the show Adventure Time with Raspberry Pi,
+Python, OpenAI, and speech recognition!
                 `);
-                
+                break;
+
             default:
                 output(`Command not recognized: ${cmd}\nPlease type HELP for assistance.`);
                 break;
