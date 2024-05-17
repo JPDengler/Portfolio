@@ -49,6 +49,11 @@ Python, OpenAI, and speech recognition!
         const pre = document.createElement('pre');
         pre.textContent = text;
         outputElement.appendChild(pre);
-        window.scrollTo(0, document.body.scrollHeight);
+        scrollToBottom(); // Scroll to the bottom after adding new content
+    }
+
+    function scrollToBottom() {
+        const terminal = document.getElementById('terminal');
+        terminal.scrollTop = terminal.scrollHeight;
     }
 });
