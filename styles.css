@@ -1,12 +1,41 @@
-body {
-    background-color: #000d03;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+}
+
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1.5); /* Adjust scale as needed */
+    z-index: -1; /* Ensure the video is behind other elements */
+    object-fit: cover;
+}
+
+#terminal-background-video {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the video is above the monitor border but below the terminal content */
+    object-fit: cover;
+}
+
+body {
+    background-color: #000d03;
     font-family: 'Courier New', monospace;
-    overflow: hidden; /* Prevent scrolling */
 }
 
 .container {
@@ -20,7 +49,7 @@ body {
     height: 100%;
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    z-index: 1; /* Ensure the monitor is above the video */
     display: flex;
     flex-direction: column;
 }
@@ -31,37 +60,25 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 3; /* Ensure the border is above the monitor content */
     pointer-events: none; /* Ensure the border does not block clicks */
 }
 
-#background-video {
-    display: none; /* Initially hide the background video and terminal */
-    position: absolute;
-    top: 50%; /* Adjust vertically to center */
-    left: 50%; /* Adjust horizontally to center */
-    transform: translate(-50%, -50%); /* Center the video */
-    width: 90%; /* Adjust width as needed */
-    height: 90%; /* Adjust height as needed */
-    object-fit: cover; /* Ensures the video covers the entire area of the monitor */
-    z-index: -1; /* Ensure the video is behind the terminal content */
-}
-
 #terminal {
-    display: none; /* Initially hide the background video and terminal */
-    position: absolute; /* Change to absolute positioning */
-    top: 15%; /* Adjust top position */
-    left: 15%; /* Adjust left position */
-    width: 80%; /* Adjust width */
-    height: 70%; /* Adjust height */
-    padding: 10px; /* Adjust padding */
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 80%;
+    height: 70%;
+    padding: 10px;
     box-sizing: border-box;
-    overflow: hidden; /* Prevent overflow and scrolling */
-    z-index: 3; /* Ensure terminal content is above the video and border */
-    color: #00FF00; /* Match the search bar green color */
-    text-shadow: 0 0 5px #00FF00; /* Add glow effect */
-    font-size: 1vw; /* Adjust font size based on viewport width */
-    line-height: 1.25vw; /* Adjust line height based on viewport width */
+    overflow: hidden;
+    z-index: 4; /* Ensure terminal content is above the border */
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00;
+    font-size: 1vw;
+    line-height: 1.25vw;
 }
 
 #terminal pre {
@@ -69,16 +86,16 @@ body {
 }
 
 #output {
-    flex-grow: 1; /* Allow the output to take up available space */
-    overflow-y: hidden; /* Prevent scrolling if content overflows */
-    margin: 0; /* Remove default margin */
+    flex-grow: 1;
+    overflow-y: hidden;
+    margin: 0;
 }
 
 #input-line {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    margin-bottom: 10px; /* Ensure some space at the bottom */
+    margin-bottom: 10px;
 }
 
 #input {
@@ -86,36 +103,36 @@ body {
     color: #00FF00;
     border: none;
     outline: none;
-    width: calc(100% - 10px); /* Adjust width based on padding */
+    width: calc(100% - 10px);
     padding: 5px;
     font-family: 'Courier New', monospace;
-    font-size: 1.5vw; /* Adjust font size based on viewport width */
+    font-size: 1.5vw;
 }
 
 pre {
     font-family: 'Courier New', monospace;
-    color: #00FF00; /* Match the search bar green color */
-    text-shadow: 0 0 5px #00FF00; /* Add glow effect */
-    margin: 0; /* Remove default margin */
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00;
+    margin: 0;
 }
 
 a {
-    color: #00FF00; /* Set the color of the hyperlink */
-    text-decoration: underline; /* Underline the text */
-    font-weight: bold; /* Make the text bold */
+    color: #00FF00;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 a:hover {
-    color: #00FFFF; /* Change color on hover */
+    color: #00FFFF;
 }
 
 #power-button {
     position: absolute;
-    width: 5%; /* Adjust width as a percentage of the container width */
-    height: auto; /* Let the height scale proportionally */
-    top: 93%; /* Adjust top position as a percentage of the container height */
-    left: 10%; /* Adjust left position as a percentage of the container width */
-    transform: translate(-50%, -50%); /* Center the button */
-    z-index: 7;
-    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+    width: 5%;
+    height: auto;
+    top: 93%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 5; /* Ensure the button is above all other elements */
+    cursor: pointer;
 }

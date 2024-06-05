@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <video autoplay muted loop id="background-video">
+        <source src="images/LightsOff.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="container">
         <div class="monitor">
             <!-- Border image -->
             <img src="images/MonitorOutline.png" class="monitor-border" alt="Monitor Border">
             
-            <video autoplay muted loop id="background-video">
+            <video autoplay muted loop id="terminal-background-video" style="display: none;">
                 <source src="images/Terminal.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div id="terminal">
+            <div id="terminal" style="display: none;">
                 <!-- Terminal content -->
                 <pre>
                     ,---------------------------,
@@ -33,26 +37,24 @@
                 /_________________________________ __ / | ___
                 |                                   |   |    
                 |  _ _ _                 [-------]  |   |    (
-                |  o o o                 [-------]  |  /     _)_
-                |__________________________________ | /     / " /
-                /--------------------------------------/|   (  )/
-                /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/- /
-                /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
-                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                |  o o o                 [-------]  |  /     _)_ 
+                |__________________________________ | /     / " / 
+                /--------------------------------------/|   (  )/ 
+                /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/- / 
+                /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-// 
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 Welcome to my Portfolio, have a play around or switch to <a href="ALT/index.html">SIMPLE VIEW</a>.
-
-Type HELP then press ENTER for commands!
-                </pre>
-                <div id="output"></div>
-                <div id="input-line">
-                    <span>></span>
-                    <input type="text" id="input" autofocus>
-                </div>
-            </div>
-        </div>
-        <img id="power-button" src="images/ButtonOff.png" alt="Power Button">
-    </div>
-    <script src="main.js"></script>
+Type HELP then press ENTER for commands!</pre> 
+                <div id="output"></div> 
+                <div id="input-line"> 
+                    <span>></span> 
+                    <input type="text" id="input" autofocus> 
+                </div> 
+            </div> 
+        </div> 
+        <img id="power-button" src="images/ButtonOff.png" alt="Power Button"> 
+    </div> 
+    <script src="main.js"></script> 
 </body>
 </html>
