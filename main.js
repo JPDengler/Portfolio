@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputElement = document.getElementById('input');
     const outputElement = document.getElementById('output');
     const powerButton = document.getElementById('power-button');
-    const backgroundVideo = document.getElementById('background-video');
     const terminal = document.getElementById('terminal');
+    const terminalBackgroundVideo = document.getElementById('terminal-background-video');
     let powerOn = false; // Track the state of the power button
 
     inputElement.addEventListener('keydown', function(event) {
@@ -22,15 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (powerOn) {
             // If power is on, turn it off
             powerButton.src = 'images/ButtonOff.png'; // Change the button image to ButtonOff.png
-            backgroundVideo.style.display = 'none'; // Hide the background video
             terminal.style.display = 'none'; // Hide the terminal
+            terminalBackgroundVideo.style.display = 'none'; // Hide the terminal background video
             powerOn = false; // Update power state
             clearOutput(); // Clear the terminal output
         } else {
             // If power is off, turn it on
             powerButton.src = 'images/ButtonOn.png'; // Change the button image to ButtonOn.png
-            backgroundVideo.style.display = 'block'; // Show the background video
             terminal.style.display = 'block'; // Show the terminal
+            terminalBackgroundVideo.style.display = 'block'; // Show the terminal background video
             powerOn = true; // Update power state
             scrollToBottom(); // Ensure the terminal scrolls to the bottom
         }
@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         terminal.scrollTop = terminal.scrollHeight;
     }
 
+    //LINKED PROJECTS
     function output(text) {
         const lines = text.split('\n'); // Split the text into individual lines
         lines.forEach(line => {
