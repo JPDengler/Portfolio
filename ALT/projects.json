@@ -1,33 +1,39 @@
 {
     "projects": [
         {
-            "name": "CS-330 Final: 3D Rendering of my desk",
-            "url": "https://github.com/JPDengler/3D-Rendering-of-my-desk",
+            "title": "CS-330 Final: 3D Rendering of my desk",
+            "description": "A detailed 3D rendering of my desk created for my CS-330 final project.",
+            "link": "https://github.com/JPDengler/3D-Rendering-of-my-desk",
             "showcase": true
         },
         {
-            "name": "CS-320 Final: Software Test Automation",
-            "url": "https://github.com/JPDengler/CS320",
+            "title": "CS-320 Final: Software Test Automation",
+            "description": "A comprehensive software test automation project for CS-320.",
+            "link": "https://github.com/JPDengler/CS320",
             "showcase": true
         },
         {
-            "name": "CS-300: Data Structures and Algorithms",
-            "url": "https://github.com/JPDengler/CS-300",
+            "title": "CS-300: Data Structures and Algorithms",
+            "description": "A project focusing on data structures and algorithms for CS-300.",
+            "link": "https://github.com/JPDengler/CS-300",
             "showcase": true
         },
         {
-            "name": "ProjectBMO",
-            "description": "Creating a real-life BMO from the show Adventure Time with Raspberry Pi, Python, OpenAI, and speech recognition!",
-            "showcase": true
+            "title": "ProjectBMO",
+            "description": "Creating a real-life BMO from the show Adventure Time with Raspberry Pi, Python, OpenAI, and speech recognition.",
+            "link": "#",
+            "showcase": false
         },
         {
-            "name": "EasyQuestHelper",
-            "description": "Skyrim MCM console command mod",
-            "showcase": true
+            "title": "EasyQuestHelper",
+            "description": "A Skyrim MCM console command mod.",
+            "link": "#",
+            "showcase": false
         },
         {
-            "name": "DARKMODE: XP bar for OUII - Skyrim UI mod",
-            "url": "https://www.nexusmods.com/skyrimspecialedition/mods/119712?tab=description",
+            "title": "DARKMODE: XP bar for OUII",
+            "description": "A Skyrim UI mod.",
+            "link": "https://www.nexusmods.com/skyrimspecialedition/mods/119712?tab=description",
             "showcase": false
         }
     ]
