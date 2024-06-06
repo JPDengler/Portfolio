@@ -22,7 +22,7 @@
             "title": "ProjectBMO",
             "description": "Creating a real-life BMO from the show Adventure Time with Raspberry Pi, Python, OpenAI, and speech recognition.",
             "link": "https://github.com/JPDengler/CS-300",
-            "showcase": false
+            "showcase": true
         },
         {
             "title": "EasyQuestHelper",
