@@ -11,15 +11,13 @@ async function loadProjects() {
             projectElement.innerHTML = `
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
-                <a href="${project.link}" target="_blank">View Project</a><br/><br/>
+                <a href="${project.link}" target="_blank">View Project</a>
             `;
 
             if (project.showcase) {
                 showcaseContainer.appendChild(projectElement);
             }
-            const archiveElement = projectElement.cloneNode(true);
-            archiveElement.innerHTML += '<br/><br/>'; // Ensure breaks are also in the archive
-            archiveContainer.appendChild(archiveElement);
+            archiveContainer.appendChild(projectElement.cloneNode(true));
         });
     } catch (error) {
         console.error('Error loading projects:', error);
