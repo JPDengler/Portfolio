@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     function loadProjects() {
-        fetch('../projects.json')  // Updated path
+        fetch('projects.json')  // Adjusted to be relative to the root of ALT folder
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
