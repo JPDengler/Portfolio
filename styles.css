@@ -136,3 +136,7 @@ a:hover {
     z-index: 5; /* Ensure the button is above all other elements */
     cursor: pointer;
 }
+
+.project-item {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}

@@ -8,6 +8,7 @@ async function loadProjects() {
 
         data.projects.forEach(project => {
             const projectElement = document.createElement('div');
+            projectElement.classList.add('project-item'); // Add the class for spacing
             projectElement.innerHTML = `
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
@@ -17,7 +18,8 @@ async function loadProjects() {
             if (project.showcase) {
                 showcaseContainer.appendChild(projectElement);
             }
-            archiveContainer.appendChild(projectElement.cloneNode(true));
+            const archiveElement = projectElement.cloneNode(true);
+            archiveContainer.appendChild(archiveElement);
         });
     } catch (error) {
         console.error('Error loading projects:', error);
