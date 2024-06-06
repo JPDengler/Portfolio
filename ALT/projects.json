@@ -1,0 +1,34 @@
+{
+    "projects": [
+        {
+            "name": "CS-330 Final: 3D Rendering of my desk",
+            "url": "https://github.com/JPDengler/3D-Rendering-of-my-desk",
+            "showcase": true
+        },
+        {
+            "name": "CS-320 Final: Software Test Automation",
+            "url": "https://github.com/JPDengler/CS320",
+            "showcase": true
+        },
+        {
+            "name": "CS-300: Data Structures and Algorithms",
+            "url": "https://github.com/JPDengler/CS-300",
+            "showcase": true
+        },
+        {
+            "name": "ProjectBMO",
+            "description": "Creating a real-life BMO from the show Adventure Time with Raspberry Pi, Python, OpenAI, and speech recognition!",
+            "showcase": true
+        },
+        {
+            "name": "EasyQuestHelper",
+            "description": "Skyrim MCM console command mod",
+            "showcase": true
+        },
+        {
+            "name": "DARKMODE: XP bar for OUII - Skyrim UI mod",
+            "url": "https://www.nexusmods.com/skyrimspecialedition/mods/119712?tab=description",
+            "showcase": false
+        }
+    ]
+}
