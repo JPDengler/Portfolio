@@ -21,13 +21,13 @@
         {
             "title": "ProjectBMO",
             "description": "Creating a real-life BMO from the show Adventure Time with Raspberry Pi, Python, OpenAI, and speech recognition.",
-            "link": "#",
+            "link": "https://github.com/JPDengler/CS-300",
             "showcase": false
         },
         {
             "title": "EasyQuestHelper",
             "description": "A Skyrim MCM console command mod.",
-            "link": "#",
+            "link": "https://github.com/JPDengler/CS-300",
             "showcase": false
         },
         {
