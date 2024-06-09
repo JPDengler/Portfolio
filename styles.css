@@ -54,6 +54,17 @@ body {
     flex-direction: column;
 }
 
+#black-background {
+    position: absolute;
+    width: 90%;
+    height: 95%;
+    top: 10%;
+    left: 5%;
+    background-color: black;
+    z-index: 1.5; /* Ensure the black background is between the monitor and terminal */
+}
+
+
 .monitor-border {
     position: absolute;
     width: 100%;
