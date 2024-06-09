@@ -13,7 +13,7 @@ async function loadProjects() {
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
                 <a href="${project.link}" target="_blank">View Project</a>
-                <p>${project.space}</p>
+                <p></p>
             `;
 
             if (project.showcase) {
