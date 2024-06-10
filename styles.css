@@ -57,8 +57,8 @@ body {
 #black-background {
     position: absolute;
     width: 90%;
-    height: 95%;
-    top: 10%;
+    height: 90%;
+    top: 7%;
     left: 5%;
     background-color: black;
     z-index: 1.5; /* Ensure the black background is between the monitor and terminal */
@@ -155,4 +155,13 @@ a:hover {
 
 .project-item {
     margin-bottom: 50px; /* Adjust the value as needed */
+}
+
+#standby-image {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Ensure the standby image is above all other elements */
 }
