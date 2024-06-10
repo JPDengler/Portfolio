@@ -1,7 +1,7 @@
 async function loadProjects() {
     try {
         console.log('Fetching projects.json');
-        const response = await fetch('projects.json');  // Ensure this path is correct
+        const response = await fetch('ALT/projects.json');  // Ensure this path is correct
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
