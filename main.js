@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    function command(cmd) {
+    async function command(cmd) {
         switch (cmd.toLowerCase()) {
             case 'help':
                 output(`Available commands:
@@ -47,10 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
 
             case 'showprojx':
-                output(`Some recent favorites:
-    - CS-330 Final: 3D Rendering of my desk
-    - CS-320 Final: Software Test Automation
-    - CS-300: Data Structures and Algorithms`);
+                await showProjects('showcase');
                 break;
 
             case 'currentwork':
@@ -59,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
 
             case 'archive':
-                output(`DARKMODE: XP bar for OUII - Skyrim UI mod`);
+                await showProjects('archive');
                 break;
 
             default:
@@ -71,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function output(text) {
         const pre = document.createElement('pre');
-        pre.textContent = text;
+        pre.innerHTML = text;
         outputElement.appendChild(pre);
         scrollToBottom(); // Scroll to the bottom after adding new content
     }
@@ -84,30 +81,26 @@ document.addEventListener('DOMContentLoaded', function() {
         terminal.scrollTop = terminal.scrollHeight;
     }
 
-    //LINKED PROJECTS
-    function output(text) {
-        const lines = text.split('\n'); // Split the text into individual lines
-        lines.forEach(line => {
-            const pre = document.createElement('pre');
-            if (line.includes('CS-330 Final: 3D Rendering of my desk')) {
-                // If the line contains the specific text, replace it with a hyperlink
-                line = line.replace('CS-330 Final: 3D Rendering of my desk', '<a href="https://github.com/JPDengler/3D-Rendering-of-my-desk" target="_blank">CS-330 Final: 3D Rendering of my desk</a>');
-            }
-            if (line.includes('CS-300: Data Structures and Algorithms')) {
-                // If the line contains the specific text, replace it with a hyperlink
-                line = line.replace('CS-300: Data Structures and Algorithms', '<a href="https://github.com/JPDengler/CS-300" target="_blank">CS-300: Data Structures and Algorithms</a>');
-            }
-            if (line.includes('CS-320 Final: Software Test Automation')) {
-                // If the line contains the specific text, replace it with a hyperlink
-                line = line.replace('CS-320 Final: Software Test Automation', '<a href="https://github.com/JPDengler/CS320" target="_blank">CS-320 Final: Software Test Automation</a>');
-            }
-            if (line.includes('DARKMODE: XP bar for OUII - Skyrim UI mod')) {
-                // If the line contains the specific text, replace it with a hyperlink
-                line = line.replace('DARKMODE: XP bar for OUII - Skyrim UI mod', '<a href="https://www.nexusmods.com/skyrimspecialedition/mods/119712?tab=description" target="_blank">DARKMODE: XP bar for OUII - Skyrim UI mod</a>');
-            }
-            pre.innerHTML = line;
-            outputElement.appendChild(pre);
-        });
-        scrollToBottom(); // Scroll to the bottom after adding new content
+    async function showProjects(type) {
+        try {
+            const response = await fetch('projects.json');
+            const data = await response.json();
+            let projectOutput = '';
+
+            data.projects.forEach(project => {
+                if ((type === 'showcase' && project.showcase) || type === 'archive') {
+                    projectOutput += `
+<h3>${project.title}</h3>
+<p>${project.description}</p>
+<a href="${project.link}" target="_blank">View Project</a><br><br>
+                    `;
+                }
+            });
+
+            output(projectOutput);
+        } catch (error) {
+            console.error('Error loading projects:', error);
+            output('Error loading projects. Please try again later.');
+        }
     }
 });
