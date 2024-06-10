@@ -1,6 +1,6 @@
 async function loadProjects() {
     try {
-        const response = await fetch('../projects.json');
+        const response = await fetch('ALT/projects.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
