@@ -41,18 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'help':
                 output(`Available commands:
     - showprojx: Preview some completed favorite projects.
-    - currentwork: Preview ongoing projects.
     - archive: most of my work, at least worth mentioning...
                 `);
                 break;
 
             case 'showprojx':
                 await showProjects('showcase');
-                break;
-
-            case 'currentwork':
-                output(`ProjectBMO - Creating a real-life BMO from the show Adventure Time with Raspberry Pi, Python, OpenAI, and speech recognition!
-    EasyQuestHelper - Skyrim MCM console command mod`);
                 break;
 
             case 'archive':
