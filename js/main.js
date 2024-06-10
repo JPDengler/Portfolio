@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function showProjects(type) {
         try {
             console.log(`Fetching projects.json for ${type}`);
-            const response = await fetch('projects.json');
+            const response = await fetch('ALT/projects.json'); // Adjust the path to the correct location of projects.json
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
             data.projects.forEach(project => {
                 if ((type === 'showcase' && project.showcase) || type === 'archive') {
                     projectOutput += `
-Title: ${project.title}
-Description: ${project.description}
-Link: ${project.link ? project.link : 'No link available'}
-                    \n\n`;
+<pre>${project.title}</pre>
+<pre>${project.description}</pre>
+<a href="${project.link}" target="_blank">View Project</a><br><br>
+                    `;
                 }
             });
 
