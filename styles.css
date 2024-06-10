@@ -64,32 +64,37 @@ body {
     z-index: 1.5; /* Ensure the black background is between the monitor and terminal */
 }
 
-
 .monitor-border {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 3; /* Ensure the border is above the monitor content */
+    z-index: 4; /* Ensure the border is above the monitor content */
     pointer-events: none; /* Ensure the border does not block clicks */
 }
 
 #terminal {
     display: none;
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 15%;
     width: 80%;
-    height: 70%;
-    padding: 10px;
+    height: 75%;
+    padding: 5px;
     box-sizing: border-box;
-    overflow: hidden;
-    z-index: 4; /* Ensure terminal content is above the border */
+    overflow-y: auto; /* Allow vertical scrolling */
+    z-index: 3; /* Ensure terminal content is above the border */
     color: #00FF00;
     text-shadow: 0 0 5px #00FF00;
     font-size: 1vw;
     line-height: 1.25vw;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#terminal::-webkit-scrollbar {
+    display: none; /* Hide scrollbars for WebKit-based browsers */
 }
 
 #terminal pre {
@@ -98,8 +103,8 @@ body {
 
 #output {
     flex-grow: 1;
-    overflow-y: hidden;
     margin: 0;
+    padding-right: 20px; /* Add padding to make space for scrolling */
 }
 
 #input-line {

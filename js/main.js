@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const terminal = document.getElementById('terminal');
     const terminalBackgroundVideo = document.getElementById('terminal-background-video');
     let powerOn = false; // Track the state of the power button
+    let isUserScrolling = false;
 
     inputElement.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -13,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 output(`> ${input}`); // Output the command
                 command(input);
                 inputElement.value = '';
-                scrollToBottom(); // Ensure the terminal scrolls to the bottom
+                if (!isUserScrolling) {
+                    scrollToBottom(); // Ensure the terminal scrolls to the bottom
+                }
             }
         }
     });
@@ -57,14 +60,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 output(`Command not recognized: ${cmd}\nPlease type HELP for assistance.`);
                 break;
         }
-        scrollToBottom(); // Ensure the terminal scrolls to the bottom after command output
+        if (!isUserScrolling) {
+            scrollToBottom(); // Ensure the terminal scrolls to the bottom after command output
+        }
     }
 
     function output(text) {
         const pre = document.createElement('pre');
         pre.innerHTML = text;
         outputElement.appendChild(pre);
-        scrollToBottom(); // Scroll to the bottom after adding new content
+        if (!isUserScrolling) {
+            scrollToBottom(); // Scroll to the bottom after adding new content
+        }
     }
 
     function clearOutput() {
@@ -74,6 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function scrollToBottom() {
         terminal.scrollTop = terminal.scrollHeight;
     }
+
+    terminal.addEventListener('scroll', function() {
+        const isAtBottom = terminal.scrollHeight - terminal.scrollTop === terminal.clientHeight;
+        isUserScrolling = !isAtBottom;
+    });
 
     async function showProjects(type) {
         try {
