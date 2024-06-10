@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     projectOutput += `
 <pre>${project.title}</pre>
 <pre>${project.description}</pre>
-<a href="${project.link}" target="_blank">View Project</a><br><br>
+<a href="${project.link}" target="_blank">View Project</a>
                     `;
                 }
             });
