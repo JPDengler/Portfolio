@@ -1,6 +1,6 @@
 async function loadProjects() {
     try {
-        const response = await fetch('ALT/projects.json'); // Updated path to projects.json
+        const response = await fetch('/ALT/projects.json'); // Adjust the path as per your repository structure
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
