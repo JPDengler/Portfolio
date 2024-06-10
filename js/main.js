@@ -83,11 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function showProjects(type) {
         try {
+            console.log(`Fetching projects.json for ${type}`);
             const response = await fetch('projects.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
+            console.log('Projects data:', data);
             let projectOutput = '';
 
             data.projects.forEach(project => {
