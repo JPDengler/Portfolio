@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
     async function showProjects(type) {
         try {
             const response = await fetch('projects.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             const data = await response.json();
             let projectOutput = '';
 
@@ -100,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             output(projectOutput);
         } catch (error) {
             console.error('Error loading projects:', error);
-            output('Error loading projects. Please try again later.');
+            output(`Error loading projects: ${error.message}`);
         }
     }
 });
