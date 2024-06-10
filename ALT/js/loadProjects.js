@@ -1,10 +1,12 @@
 async function loadProjects() {
     try {
-        const response = await fetch('ALT/projects.json');
+        console.log('Fetching projects.json');
+        const response = await fetch('projects.json');  // Ensure this path is correct
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
+        console.log('Projects data:', data);
 
         const showcaseContainer = document.getElementById('showprojx');
         const archiveContainer = document.getElementById('archive-projects');
