@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
             data.projects.forEach(project => {
                 if ((type === 'showcase' && project.showcase) || type === 'archive') {
                     projectOutput += `
-<h3>${project.title}</h3>
-<p>${project.description}</p>
-<a href="${project.link}" target="_blank">View Project</a><br><br>
-                    `;
+Title: ${project.title}
+Description: ${project.description}
+Link: ${project.link ? project.link : 'No link available'}
+                    \n\n`;
                 }
             });
 
