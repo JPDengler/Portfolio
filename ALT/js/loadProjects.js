@@ -1,6 +1,6 @@
 async function loadProjects() {
     try {
-        const response = await fetch('ALT/projects.json');
+        const response = await fetch('../projects.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -15,7 +15,7 @@ async function loadProjects() {
             projectElement.innerHTML = `
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
-                <a href="${project.link}" target="_blank">View Project</a><br><br>
+                <a href="${project.link}" target="_blank">View Project</a>
             `;
 
             if (project.showcase) {
