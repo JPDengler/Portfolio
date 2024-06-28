@@ -165,3 +165,30 @@ a:hover {
     transform: translate(-50%, -50%);
     z-index: 0; /* Ensure the standby image is above all other elements */
 }
+
+.list-inline {
+    list-style: none; /* Remove the list-style */
+    padding: 0;
+    margin: 0;
+}
+
+.list-inline-item {
+    margin: 0 1rem; /* Adjust the margin to control spacing between icons */
+}
+
+.list-inline-item i {
+    color: #00ff00; /* Green color */
+    font-size: 5rem; /* Adjust the size of the icons */
+}
+
+#skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left; /* Center the icons */
+    align-items: center;
+}
+
+#skills-container .list-inline-item {
+    flex: 0 0 20%; /* Adjust this percentage to control the number of icons per row */
+    text-align: center;
+}

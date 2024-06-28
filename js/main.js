@@ -41,10 +41,18 @@ document.addEventListener('DOMContentLoaded', function() {
     async function command(cmd) {
         switch (cmd.toLowerCase()) {
             case 'help':
-                output(`Available commands:
-    - showprojx: Preview some completed favorite projects.
-    - archive: most of my work, at least worth mentioning...
-    - lights: Toggle lights on and off
+                output(`Current available commands:
+    - whois : who am I?
+    - showprojx : Preview some completed favorite projects.
+    - archive : Library of most of my publicated work.
+    - exp : what experience do I have?
+    - edu : where and what have I learned?
+    - skills : 
+    - awards
+
+
+
+    - lights : Toggle the lights!
                 `);
                 break;
 
@@ -90,12 +98,40 @@ actively seeking new opportunities to grow as a developer
 and make a meaningful impact in the tech industry.`);
                 break;
 
-            case 'experience':
+            case 'exp':
+                output(`
+* QA Technician VII *
+@ Radwell International @
+DURATION: April 2020 - April 2024
+INFO: Leveraged extensive knowledge of analog and digital electronic 
+components to support the development and troubleshooting of complex 
+systems. Proficiently utilized automation software and test 
+equipment, such as oscilloscopes and multi-meters, to conduct 
+functional performance testing of systems, subassemblies, and parts. 
+Developed and implemented test procedures, ensuring compliance with 
+Standard Operating Procedures (SOPs) and engineering diagrams. 
+Communicated technical issues and product failures effectively with 
+both internal teams and customers. This role honed my analytical 
+and problem-solving skills, laying a solid foundation for my 
+transition into software development.
 
+* Veternarian Technician *
+@ HousePaws Mobile Vet @
+DURATION: November 2014 - January 2020
+INFO: Provided critical support in a fast-paced veterinary 
+environment, including the restraint and stabilization of 
+animals during examination and treatment. Managed supply 
+inventory, ensuring efficient operations. Reviewed and 
+entered important patient data into the system, maintaining 
+accurate medical records. Triaged incoming patients and provided 
+care for anesthetized patients. This position enhanced my 
+ability to work under pressure, communicate effectively, 
+and manage detailed records, all of which are crucial skills 
+in software development.`);
                 break;
 
             case 'skills':
-
+                outputSkills();
                 break;
 
             case 'awards':
@@ -112,7 +148,7 @@ and make a meaningful impact in the tech industry.`);
         }
         scrollToBottom(); // Ensure the terminal scrolls to the bottom after command output
     }
-
+    
     function output(text) {
         const pre = document.createElement('pre');
         pre.innerHTML = text;
@@ -154,6 +190,62 @@ and make a meaningful impact in the tech industry.`);
             console.error('Error loading projects:', error);
             output(`Error loading projects: ${error.message}`);
         }
+    }
+
+    function outputSkills() {
+        const skillsHTML = `
+            <div class="subheading mb-0">Programming Languages &amp; Tools</div>
+            <br/>
+            <ul class="list-inline list-icons" id="skills-container">
+                <li class="list-inline-item">
+                    <i class="devicons devicons-python" data-toggle="tooltip" title="Python"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-html5" data-toggle="tooltip" title="HTML5"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-css3" data-toggle="tooltip" title="CSS3"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-javascript_shield" data-toggle="tooltip" title="JavaScript"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-github_badge" data-toggle="tooltip" title="GitHub"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-mysql" data-toggle="tooltip" title="MySQL"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-mongodb" data-toggle="tooltip" title="MongoDB"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-bootstrap" data-toggle="tooltip" title="Bootstrap"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-linux" data-toggle="tooltip" title="Linux"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-ubuntu" data-toggle="tooltip" title="Ubuntu"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-raspberry_pi" data-toggle="tooltip" title="Raspberry Pi"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-sass" data-toggle="tooltip" title="Sass"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-windows" data-toggle="tooltip" title="Windows"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-vim" data-toggle="tooltip" title="Vim"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicons devicons-opensource" data-toggle="tooltip" title="Open Source"></i>
+                </li>
+            </ul>
+        `;
+        outputElement.innerHTML += skillsHTML;
+        scrollToBottom(); // Scroll to the bottom after adding new content
     }
 
     // Flicker effect
