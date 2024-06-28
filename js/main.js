@@ -57,24 +57,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
 
             case 'whois':
-                output(`Hello, I'm Joseph Dengler, an entry-level developer with a strong foundation in computer science and a passion for 
-                    creating impactful software solutions. I am currently pursuing a degree in Computer Science with a concentration in 
-                    Software Engineering at Southern New Hampshire University, where I've consistently excelled academically, earning 
-                    distinctions such as Alpha Sigma Lambda, Dean’s List, President’s List, and Honor Roll. I have currently and maintained 
-                    since my beginning maintained a 4.0GPA a verage.
+                output(`Hello, I'm Joseph Dengler, an entry-level developer with a strong 
+foundation in computer science and a passion for creating impactful 
+software solutions. I am currently pursuing a degree in Computer 
+Science with a concentration in Software Engineering at Southern 
+New Hampshire University, where I've consistently excelled 
+academically, earning distinctions such as Alpha Sigma Lambda, 
+Dean’s List, President’s List, and Honor Roll. I have currently 
+and maintained since my beginning maintained a 4.0GPA a verage.
                     
-                    With professional expertise in languages like C++, Java, JavaScript, Python, and MySQL, I bring a diverse skill set to the 
-                    table. My experience spans from troubleshooting complex electronic systems to developing robust software applications. 
-                    I've worked on various projects, including "Project Magpie," this portfolio project, mock app prototypes (key components 
-                    of my studies at SNHU.) Recently, I have been building wireframe designs based on UX/UI fundamentals and both Android and 
-                    Apple UI guidelines, ensuring a seamless user experience. I have also been working on client and server development on 
-                    Linux OS utilizing MongoDB. I also enjoy modding video games including Skyrim and creating IOT projects such as my real life 
-                    'BMO' robot, check out my projects to take a look!
+With professional expertise in languages like C++, Java, 
+JavaScript, Python, and MySQL, I bring a diverse skill 
+set to the table. My experience spans from troubleshooting 
+complex electronic systems to developing robust software 
+applications. I've worked on various projects, including 
+"Project Magpie," this portfolio project, mock app prototypes 
+(key components of my studies at SNHU.) Recently, I have 
+been building wireframe designs based on UX/UI fundamentals 
+and both Android and Apple UI guidelines, ensuring a seamless 
+user experience. I have also been working on client and server 
+development on Linux OS utilizing MongoDB. I also enjoy modding 
+video games including Skyrim and creating IOT projects such as 
+my real life 'BMO' robot, check out my projects to take a look!
                     
-                    Previously, I worked as a Level Seven Quality Assurance Technician at Radwell International, where I honed my skills in 
-                    troubleshooting and testing electronic systems. Now, as I transition into the development field, I'm eager to leverage my 
-                    technical knowledge and problem-solving abilities to contribute to dynamic and innovative projects. I'm actively seeking new 
-                    opportunities to grow as a developer and make a meaningful impact in the tech industry.`);
+Previously, I worked as a Level Seven Quality Assurance 
+Technician at Radwell International, where I honed my skills 
+in troubleshooting and testing electronic systems. Now, as I 
+transition into the development field, I'm eager to leverage 
+my technical knowledge and problem-solving abilities to 
+contribute to dynamic and innovative projects. I'm 
+actively seeking new opportunities to grow as a developer 
+and make a meaningful impact in the tech industry.`);
                 break;
 
             case 'experience':
