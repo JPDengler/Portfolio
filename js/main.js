@@ -47,10 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
     - archive : Library of most of my publicated work.
     - exp : what experience do I have?
     - edu : where and what have I learned?
-    - skills : 
-    - awards
-
-
+    - skills : some of my most used languages and tools.
+    - awards : recent accomplishments, mostly academically
 
     - lights : Toggle the lights!
                 `);
@@ -65,13 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
 
             case 'whois':
-                output(`Hello, I'm Joseph Dengler, an entry-level developer with a strong 
-foundation in computer science and a passion for creating impactful 
-software solutions. I am currently pursuing a degree in Computer 
-Science with a concentration in Software Engineering at Southern 
-New Hampshire University, where I've consistently excelled 
-academically, earning distinctions such as Alpha Sigma Lambda, 
-Dean’s List, President’s List, and Honor Roll. I have currently 
+                output(`
+* Hi, I'm Joey!*
+----------------------------------------------------------------------
+An entry-level developer with a strong foundation in computer 
+science and a passion for creating impactful software solutions. 
+I am currently pursuing a degree in Computer Science with a 
+concentration in Software Engineering at Southern New Hampshire 
+University, where I've consistently excelled academically, 
+earning distinctions such as Alpha Sigma Lambda, Dean’s List, 
+President’s List, and Honor Roll. I have currently 
 and maintained since my beginning maintained a 4.0GPA a verage.
                     
 With professional expertise in languages like C++, Java, 
@@ -101,6 +102,7 @@ and make a meaningful impact in the tech industry.`);
             case 'exp':
                 output(`
 * QA Technician VII *
+----------------------------------------------------------------------
 @ Radwell International @
 DURATION: April 2020 - April 2024
 INFO: Leveraged extensive knowledge of analog and digital electronic 
@@ -116,6 +118,7 @@ and problem-solving skills, laying a solid foundation for my
 transition into software development.
 
 * Veternarian Technician *
+----------------------------------------------------------------------
 @ HousePaws Mobile Vet @
 DURATION: November 2014 - January 2020
 INFO: Provided critical support in a fast-paced veterinary 
@@ -132,10 +135,30 @@ in software development.`);
 
             case 'skills':
                 outputSkills();
+                output(`
++ Research and Layout Using Lucidchart/Lucidspark
++ Creating Flowcharts and Visual Plans
++ Cross Browser Testing & Debugging
++ Collaborating with Cross-Functional Teams
++ Agile Development & Scrum
++ Continuous Feedback and Iteration
++ Final Review and Deployment`);
                 break;
 
             case 'awards':
+                    output(`
+* Recent Awards *
+----------------------------------------------------------------------
+🏆 4.0 GPA - Southern New Hamphsire University - 2023/2025
 
+🏆Alpha Sigma Lambda - Inducted May 2023
+
+🏆Dean’s List - January 2023 - April 2024
+
+🏆President’s List - January 2023 - April 2024
+
+🏆Honor Roll - January 2023 - April 2024
+`)
                 break;
 
             case 'lights':
