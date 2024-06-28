@@ -8,26 +8,26 @@
       },
       {
         "title": "Software Test Automation",
-        "description": "A comprehensive software test automation project for CS-320.",
+        "description": "A comprehensive software test automation project written in Java.",
         "link": "https://github.com/JPDengler/CS320",
         "showcase": true
       },
       {
         "title": "Data Structures and Algorithms",
-        "description": "A project focusing on data structures and algorithms for CS-300.",
+        "description": "A C++ project focusing on data structures and algorithms.",
         "link": "https://github.com/JPDengler/CS-300",
         "showcase": true
       },
       {
         "title": "ProjectBMO",
         "description": "Creating a real-life BMO from the show Adventure Time with Raspberry Pi, \nPython, OpenAI, and speech recognition.",
-        "link": "",
+        "link": "https://github.com/JPDengler/Project-BMO/",
         "showcase": false
       },
       {
-        "title": "EasyQuestHelper",
-        "description": "A Skyrim MCM console command mod.",
-        "link": "",
+        "title": "Project Magpie",
+        "description": "My portfolio you are currently viewing! The simple view is just that, \nsimple, but resourceful, checkout the terminal side here.",
+        "link": "https://jpdengler.github.io/Portfolio/",
         "showcase": false
       },
       {
@@ -38,14 +38,38 @@
       },
       {
         "title": "Operating Platforms Documentation Practice",
-        "description": "A client seeks to expand their Android game and needs cross-plateform \ncompatibility, minimal network latency, and scalability..",
+        "description": "A faux client seeks to expand their Android game and needs cross-plateform \ncompatibility, minimal network latency, and scalability.",
         "link": "https://github.com/JPDengler/Operating-Platforms-Documentation",
         "showcase": false
       },
       {
         "title": "DriverPass System Analysis and Design",
-        "description": "A simple flowchart involved project, aimed to develop a comprehensive driver \ntraining system for the user.",
+        "description": "A simple flowchart involved project, aimed to develop a comprehensive \ndriver training system for the user.",
         "link": "https://www.nexusmods.com/skyrimspecialedition/mods/119712",
+        "showcase": false
+      },
+      {
+        "title": "Client/Server Development with MongoDB and Python",
+        "description": "Setup MongoDB and Python environment with a developed CRUD operation \n[ModuleJosephDSengler.py] and dashboard layout using jupyter \n[ProjectTwoDashboard.ipynb]",
+        "link": "https://github.com/JPDengler/Client-Server-Development-CS-340-",              
+        "showcase": true
+      },
+      {
+        "title": "UI/UX Design Faux Projects",
+        "description": "Explore my passion for design through these faux projects, where I've \napplied key UX/UI principles to create user-friendly and \nvisually appealing interfaces.",
+        "link": "https://github.com/JPDengler/Client-Server-Development-CS-340-",              
+        "showcase": true
+      },
+      {
+        "title": "Frequency C++ Program",
+        "description": "A simple C++ project that can obtain an input items frequency \n(shopping/inventory), print the frequency list, and histogram.",
+        "link": "https://github.com/JPDengler/Client-Server-Development-CS-340-",              
+        "showcase": false
+      },
+      {
+        "title": "GitHub Profile README.md",
+        "description": "As simple as it is, I enjoyed designing my README.md for my \nGitHub profile and learning more about API-tokens by \nusing public access widgets.",
+        "link": "https://github.com/JPDengler/Client-Server-Development-CS-340-",              
         "showcase": false
       }
     ]
