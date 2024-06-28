@@ -57,19 +57,19 @@
       {
         "title": "UI/UX Design Faux Projects",
         "description": "Explore my passion for design through these faux projects, where I've \napplied key UX/UI principles to create user-friendly and \nvisually appealing interfaces.",
-        "link": "https://github.com/JPDengler/Client-Server-Development-CS-340-",              
+        "link": "https://github.com/JPDengler/Frequency-Program",              
         "showcase": true
       },
       {
         "title": "Frequency C++ Program",
         "description": "A simple C++ project that can obtain an input items frequency \n(shopping/inventory), print the frequency list, and histogram.",
-        "link": "https://github.com/JPDengler/Client-Server-Development-CS-340-",              
+        "link": "https://github.com/JPDengler/Frequency-Program",              
         "showcase": false
       },
       {
         "title": "GitHub Profile README.md",
         "description": "As simple as it is, I enjoyed designing my README.md for my \nGitHub profile and learning more about API-tokens by \nusing public access widgets.",
-        "link": "https://github.com/JPDengler/Client-Server-Development-CS-340-",              
+        "link": "https://github.com/JPDengler/JPDengler",              
         "showcase": false
       }
     ]
