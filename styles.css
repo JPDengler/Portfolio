@@ -39,14 +39,15 @@ body {
 }
 
 .container {
-    width: 60vw;
-    aspect-ratio: 4 / 3;
+    width: 100vw;
+    aspect-ratio: 1.5;
     position: relative;
 }
 
 .monitor {
-    width: 100%;
-    height: 100%;
+    width: 65%;
+    height: 70%;
+    top: 15%;
     position: relative;
     overflow: hidden;
     z-index: 1; /* Ensure the monitor is above the video */
@@ -77,18 +78,18 @@ body {
 #terminal {
     display: none;
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 15%;
-    width: 80%;
-    height: 75%;
-    padding: 5px;
+    width: 100%;
+    height: 70%;
+    padding: 0px;
     box-sizing: border-box;
     overflow-y: auto; /* Allow vertical scrolling */
     z-index: 3; /* Ensure terminal content is above the border */
     color: #00FF00;
     text-shadow: 0 0 5px #00FF00;
     font-size: 1vw;
-    line-height: 1.25vw;
+    line-height: 1.2vw;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -144,10 +145,10 @@ a:hover {
 
 #power-button {
     position: absolute;
-    width: 5%;
+    width: 6cap;
     height: auto;
-    top: 93%;
-    left: 10%;
+    top: 38%;
+    left: 59.5%;
     transform: translate(-50%, -50%);
     z-index: 5; /* Ensure the button is above all other elements */
     cursor: pointer;
@@ -157,14 +158,6 @@ a:hover {
     margin-bottom: 50px; /* Adjust the value as needed */
 }
 
-#standby-image {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0; /* Ensure the standby image is above all other elements */
-}
 
 .list-inline {
     list-style: none; /* Remove the list-style */
@@ -173,22 +166,24 @@ a:hover {
 }
 
 .list-inline-item {
-    margin: 0 1rem; /* Adjust the margin to control spacing between icons */
+    margin: 0 2rem; /* Adjust the margin to control spacing between icons */
 }
 
 .list-inline-item i {
     color: #00ff00; /* Green color */
-    font-size: 5rem; /* Adjust the size of the icons */
+    font-size: 3rem; /* Adjust the size of the icons */
 }
 
 #skills-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left; /* Center the icons */
-    align-items: center;
+    justify-content: left; 
+    align-items: left;
+    
 }
 
 #skills-container .list-inline-item {
-    flex: 0 0 20%; /* Adjust this percentage to control the number of icons per row */
-    text-align: center;
+    flex: 0 0 15%; /* Adjust percentage to control the number of icons per row */
+    text-align: left;
+    margin-right: 5vw; /* Adjust the bottom margin to decrease space between rows */
 }
