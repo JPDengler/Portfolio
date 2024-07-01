@@ -144,11 +144,11 @@ a:hover {
 }
 
 #power-button {
-    position: absolute;
-    width: 6cap;
+    position: absolute; /* Absolute positioning within the .monitor container */
+    width: 5%; /* Adjust the width as needed */
     height: auto;
-    top: 38%;
-    left: 59.5%;
+    top: 32.3%; /* Adjust top position as needed */
+    left: 91.7%; /* Adjust left position as needed */
     transform: translate(-50%, -50%);
     z-index: 5; /* Ensure the button is above all other elements */
     cursor: pointer;
