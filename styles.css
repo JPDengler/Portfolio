@@ -39,7 +39,7 @@ body {
 }
 
 .container {
-    width: 100vw;
+    width: 110vw;
     aspect-ratio: 1.5;
     position: relative;
 }
