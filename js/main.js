@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const powerButton = document.getElementById('power-button');
     const terminal = document.getElementById('terminal');
     const terminalBackgroundVideo = document.getElementById('terminal-background-video');
-    const backgroundVideo = document.getElementById('background-video');
     let powerOn = false; // Track the state of the power button
-    let lightsOn = false; // Track the state of the lights
+
 
     inputElement.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -49,8 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     - edu : where and what have I learned?
     - skills : some of my most used languages and tools.
     - awards : recent accomplishments, mostly academically
-
-    - lights : Toggle the lights!
                 `);
                 break;
 
@@ -159,10 +156,6 @@ in software development.`);
 
 🏆Honor Roll - January 2023 - April 2024
 `)
-                break;
-
-            case 'lights':
-                toggleLights();
                 break;
 
             default:
@@ -293,15 +286,4 @@ in software development.`);
         }
     }, 500); // Interval to check for flicker - adjust this value to change how often it checks for flickering
 
-    // Toggle lights
-    function toggleLights() {
-        if (lightsOn) {
-            backgroundVideo.src = 'images/LightsOff.mp4';
-        } else {
-            backgroundVideo.src = 'images/LightsOn.mp4';
-        }
-        lightsOn = !lightsOn;
-        backgroundVideo.load();
-        backgroundVideo.play();
-    }
 });

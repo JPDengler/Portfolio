@@ -9,15 +9,12 @@
     <link href="ALT/vendor/devicons/css/devicons.min.css" rel="stylesheet">
 </head>
 <body>
-    <video autoplay muted loop id="background-video">
-        <source src="images/LightsOff.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div id="background-container"></div>
     <div class="container">
         <div class="monitor">
             <div id="black-background"></div>
             <img src="images/MonitorOutline.png" class="monitor-border" alt="Monitor Border">
-            <img id="power-button" src="images/ButtonOff.png" alt="Power Button"> 
+            <img id="power-button" src="images/ButtonOff.png" alt="Power Button">
             <video autoplay muted loop id="terminal-background-video" style="display: none;">
                 <source src="images/Terminal.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -46,16 +43,17 @@
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 Welcome to my Portfolio, have a play around or switch to <a href="ALT/index.html">SIMPLE VIEW</a>.
-Type HELP then press ENTER for commands!</pre> 
-                <div id="output"></div> 
-                <div id="input-line"> 
-                    <span>></span> 
-                    <input type="text" id="input" autofocus> 
-                </div> 
-            </div> 
-        </div> 
-    </div> 
+Type HELP then press ENTER for commands!</pre>
+                <div id="output"></div>
+                <div id="input-line">
+                    <span>></span>
+                    <input type="text" id="input" autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/main.js"></script>
     <script src="ALT/js/loadProjects.js"></script>
+    <script src="js/setBackground.js"></script>
 </body>
 </html>
