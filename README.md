@@ -13,9 +13,6 @@ This portfolio is designed to provide a comprehensive overview of my professiona
 - SCSS
 - JavaScript
 
-How to Run
-To run the portfolio locally, follow these steps:
-
 Clone the repository:
 ```plaintext
 git clone https://github.com/JPdengler/Portfolio.git
