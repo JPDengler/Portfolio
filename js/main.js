@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             case 'whois':
                 output(`
+
 * Hi, I'm Joey!*
 ----------------------------------------------------------------------
 An entry-level developer with a strong foundation in computer 
@@ -98,6 +99,7 @@ and make a meaningful impact in the tech industry.`);
 
             case 'exp':
                 output(`
+
 * QA Technician VII *
 ----------------------------------------------------------------------
 @ Radwell International @
@@ -129,10 +131,34 @@ ability to work under pressure, communicate effectively,
 and manage detailed records, all of which are crucial skills 
 in software development.`);
                 break;
+            
+            case 'edu':
+                output(`
+
+* BCS w/ con in Software Engineering *                    
+----------------------------------------------------------------------                    
+@ Southern New Hampshire University @
+DURATION: January 2023 - April 2025
+GPA: 4.0
+
+* AAS Computer Science *                    
+----------------------------------------------------------------------                    
+@ Rowan College at Burlington County @
+DURATION: January 2017 - May 2020
+GPA: 3.7
+
+* GED *                    
+----------------------------------------------------------------------                    
+@ Lenape High School @
+DURATION: September 2012 - June 2016
+GPA: 3.6
+                    `)
+                break;
 
             case 'skills':
                 outputSkills();
                 output(`
+
 + Research and Layout Using Lucidchart/Lucidspark
 + Creating Flowcharts and Visual Plans
 + Cross Browser Testing & Debugging
@@ -146,15 +172,15 @@ in software development.`);
                     output(`
 * Recent Awards *
 ----------------------------------------------------------------------
-🏆 4.0 GPA - Southern New Hamphsire University - 2023/2025
+    🏆 4.0 GPA - Southern New Hamphsire University - 2023/2025
 
-🏆Alpha Sigma Lambda - Inducted May 2023
+    🏆Alpha Sigma Lambda - Inducted May 2023
 
-🏆Dean’s List - January 2023 - April 2024
+    🏆Dean’s List - January 2023 - April 2024
 
-🏆President’s List - January 2023 - April 2024
+    🏆President’s List - January 2023 - April 2024
 
-🏆Honor Roll - January 2023 - April 2024
+    🏆Honor Roll - January 2023 - April 2024
 `)
                 break;
 
