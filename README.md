@@ -13,43 +13,6 @@ This portfolio is designed to provide a comprehensive overview of my professiona
 - SCSS
 - JavaScript
 
-## Features
-
-- Interactive terminal interface
-- Detailed project showcase
-- Professional experience and educational background
-- Skills and workflow highlights
-- Awards and accomplishments
-
-## Project Structure
-
-```plaintext
-Portfolio/
-├── ALT/
-│   ├── css/
-│   │   ├── projects.css
-│   │   ├── resume.css
-│   │   ├── resume.min.css
-│   ├── img/
-│   ├── js/
-│   │   ├── loadProjects.js
-│   │   ├── resume.js
-│   │   ├── resume.min.js
-│   ├── scss/
-│   ├── vendor/
-│   ├── index.html
-│   └── projects.json
-├── images/
-├── js/
-│   ├── main.js
-│   ├── setBackground.js
-├── index.html
-├── styles.css
-└── README.md
-```
-How to Run
-To run the portfolio locally, follow these steps:
-
 Clone the repository:
 ```plaintext
 git clone https://github.com/JPdengler/Portfolio.git
