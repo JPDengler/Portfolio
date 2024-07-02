@@ -42,6 +42,7 @@ Portfolio/
 ├── images/
 ├── js/
 │   ├── main.js
+│   ├── setBackground.js
 ├── index.html
 ├── styles.css
 └── README.md
