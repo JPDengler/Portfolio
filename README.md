@@ -12,6 +12,7 @@ This portfolio is designed to provide a comprehensive overview of my professiona
 - CSS3
 - SCSS
 - JavaScript
+- GitHub Pages for hosting
 
 ## Features
 
