@@ -65,7 +65,6 @@ open index.html
 ```
 
 ## Contact
-<br/>
 Feel free to reach out to me through the following channels:
 <br/>
 Email: Jp.dengler@gmail.com
