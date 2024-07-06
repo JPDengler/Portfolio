@@ -183,3 +183,13 @@ a:hover {
     text-align: left;
     margin-right: 5vw; /* Adjust the bottom margin to decrease space between rows */
 }
+
+a {
+    color: #00FF00;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #00FFFF;
+}

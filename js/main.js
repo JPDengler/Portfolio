@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     - edu : where and what have I learned?
     - skills : some of my most used languages and tools.
     - awards : recent accomplishments, mostly academically
+    - blog : My latest Dev.to posts
                 `);
                 break;
 
@@ -184,6 +185,10 @@ GPA: 3.6
 `)
                 break;
 
+            case 'blog':
+                outputBlog();
+                break;
+
             default:
                 output(`Command not recognized: ${cmd}\nPlease type HELP for assistance.`);
                 break;
@@ -205,6 +210,7 @@ GPA: 3.6
     function scrollToBottom() {
         terminal.scrollTop = terminal.scrollHeight;
     }
+
 
     async function showProjects(type) {
         try {
@@ -288,6 +294,32 @@ GPA: 3.6
         `;
         outputElement.innerHTML += skillsHTML;
         scrollToBottom(); // Scroll to the bottom after adding new content
+    }
+
+    async function outputBlog() {
+        try {
+            const response = await fetch('https://dev.to/api/articles?username=JPDengler'); 
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const articles = await response.json();
+            let blogOutput = `
+            <pre>Here are my latest blog posts from DEV Community:</pre>
+            `;
+    
+            articles.slice(0, 3).forEach(article => { // Limit to 3 articles
+                blogOutput += `
+    <pre>Title: ${article.title}</pre>
+    <pre>Published: ${new Date(article.published_at).toDateString()}</pre>
+    <a href="${article.url}" target="_blank">Read more</a>
+                `;
+            });
+    
+            output(blogOutput);
+        } catch (error) {
+            console.error('Error loading blog posts:', error);
+            output(`Error loading blog posts: ${error.message}`);
+        }
     }
 
     // Flicker effect
