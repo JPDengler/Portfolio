@@ -16,7 +16,7 @@ body, html {
     height: 100%;
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Ensure the background is behind other elements */
+    z-index: -1;
 }
 
 body {
@@ -26,6 +26,7 @@ body {
 
 .container {
     width: 100vw;
+    max-width: 100vw;
     aspect-ratio: 1.5;
     left: 16%;
     position: relative;
@@ -37,7 +38,7 @@ body {
     top: 15%;
     position: relative;
     overflow: hidden;
-    z-index: 1; /* Ensure the monitor is above the video */
+    z-index: 1; 
     display: flex;
     flex-direction: column;
 }
@@ -49,7 +50,7 @@ body {
     top: 7%;
     left: 5%;
     background-color: black;
-    z-index: 1.5; /* Ensure the black background is between the monitor and terminal */
+    z-index: 1.5; 
 }
 
 .monitor-border {
@@ -58,7 +59,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 4; /* Ensure the border is above the monitor content */
+    z-index: 4; 
     pointer-events: none; /* Ensure the border does not block clicks */
 }
 
@@ -69,7 +70,7 @@ body {
     width: 90%;
     height: 90%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure the video is above the monitor border but below the terminal content */
+    z-index: 2; 
     object-fit: cover;
 }
 
@@ -83,7 +84,7 @@ body {
     padding: 0px;
     box-sizing: border-box;
     overflow-y: auto; /* Allow vertical scrolling */
-    z-index: 3; /* Ensure terminal content is above the border */
+    z-index: 3; 
     color: #00FF00;
     text-shadow: 0 0 5px #00FF00;
     font-size: 1vw;
@@ -93,7 +94,7 @@ body {
 }
 
 #terminal::-webkit-scrollbar {
-    display: none; /* Hide scrollbars for WebKit-based browsers */
+    display: none; 
 }
 
 #terminal pre {
@@ -103,7 +104,9 @@ body {
 #output {
     flex-grow: 1;
     margin: 0;
-    padding-right: 20px; /* Add padding to make space for scrolling */
+    padding-right: 20px; 
+    white-space: pre-wrap; 
+    word-break: break-word; 
 }
 
 #input-line {
@@ -142,33 +145,33 @@ a:hover {
 }
 
 #power-button {
-    position: absolute; /* Absolute positioning within the .monitor container */
-    width: 5%; /* Adjust the width as needed */
+    position: absolute; 
+    width: 5%; 
     height: auto;
-    top: 32.3%; /* Adjust top position as needed */
-    left: 91.7%; /* Adjust left position as needed */
+    top: 32.3%; 
+    left: 91.7%; 
     transform: translate(-50%, -50%);
-    z-index: 5; /* Ensure the button is above all other elements */
+    z-index: 5; 
     cursor: pointer;
 }
 
 .project-item {
-    margin-bottom: 50px; /* Adjust the value as needed */
+    margin-bottom: 50px; 
 }
 
 .list-inline {
-    list-style: none; /* Remove the list-style */
+    list-style: none; 
     padding: 0;
     margin: 0;
 }
 
 .list-inline-item {
-    margin: 0 2rem; /* Adjust the margin to control spacing between icons */
+    margin: 0 2rem; 
 }
 
 .list-inline-item i {
-    color: #00ff00; /* Green color */
-    font-size: 3rem; /* Adjust the size of the icons */
+    color: #00ff00; 
+    font-size: 3rem; 
 }
 
 #skills-container {
@@ -179,17 +182,25 @@ a:hover {
 }
 
 #skills-container .list-inline-item {
-    flex: 0 0 15%; /* Adjust percentage to control the number of icons per row */
+    flex: 0 0 15%; 
     text-align: left;
-    margin-right: 5vw; /* Adjust the bottom margin to decrease space between rows */
+    margin-right: 5vw; 
 }
 
-a {
-    color: #00FF00;
-    text-decoration: underline;
+.blog-title, .blog-description {
+    display: block;
+    margin: 0;
+    margin-left: 1em; 
+}
+
+.blog-title {
     font-weight: bold;
+    margin-top: 1rem; 
 }
 
-a:hover {
-    color: #00FFFF;
+.blog-description {
+    margin-top: 0.5rem; 
+    white-space: pre-wrap; 
+    word-break: break-word;
+    margin-bottom: 1rem;
 }

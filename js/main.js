@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.key === 'Enter') {
             const input = inputElement.value.trim();
             if (input) {
-                output(`> ${input}`); // Output the command
+                output(`> ${input}`);
                 command(input);
                 inputElement.value = '';
                 scrollToBottom(); // Ensure the terminal scrolls to the bottom
@@ -22,18 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
     powerButton.addEventListener('click', function() {
         if (powerOn) {
             // If power is on, turn it off
-            powerButton.src = 'images/ButtonOff.png'; // Change the button image to ButtonOff.png
-            terminal.style.display = 'none'; // Hide the terminal
-            terminalBackgroundVideo.style.display = 'none'; // Hide the terminal background video
-            powerOn = false; // Update power state
-            clearOutput(); // Clear the terminal output
+            powerButton.src = 'images/ButtonOff.png'; 
+            terminal.style.display = 'none';
+            terminalBackgroundVideo.style.display = 'none'; 
+            powerOn = false; 
+            clearOutput();
         } else {
             // If power is off, turn it on
-            powerButton.src = 'images/ButtonOn.png'; // Change the button image to ButtonOn.png
-            terminal.style.display = 'block'; // Show the terminal
-            terminalBackgroundVideo.style.display = 'block'; // Show the terminal background video
-            powerOn = true; // Update power state
-            scrollToBottom(); // Ensure the terminal scrolls to the bottom
+            powerButton.src = 'images/ButtonOn.png'; 
+            terminal.style.display = 'block'; 
+            terminalBackgroundVideo.style.display = 'block';
+            powerOn = true; 
+            scrollToBottom(); 
         }
     });
 
@@ -193,14 +193,14 @@ GPA: 3.6
                 output(`Command not recognized: ${cmd}\nPlease type HELP for assistance.`);
                 break;
         }
-        scrollToBottom(); // Ensure the terminal scrolls to the bottom after command output
+        scrollToBottom();
     }
     
     function output(text) {
         const pre = document.createElement('pre');
         pre.innerHTML = text;
         outputElement.appendChild(pre);
-        scrollToBottom(); // Scroll to the bottom after adding new content
+        scrollToBottom();
     }
 
     function clearOutput() {
@@ -211,11 +211,11 @@ GPA: 3.6
         terminal.scrollTop = terminal.scrollHeight;
     }
 
-
+    // Project showcase function (showprojx)
     async function showProjects(type) {
         try {
             console.log(`Fetching projects.json for ${type}`);
-            const response = await fetch('ALT/projects.json'); // Adjust the path to the correct location of projects.json
+            const response = await fetch('ALT/projects.json'); 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -240,6 +240,7 @@ GPA: 3.6
         }
     }
 
+    // Skills function
     function outputSkills() {
         const skillsHTML = `
             <div class="subheading mb-0">Programming Languages &amp; Tools</div>
@@ -293,55 +294,70 @@ GPA: 3.6
             </ul>
         `;
         outputElement.innerHTML += skillsHTML;
-        scrollToBottom(); // Scroll to the bottom after adding new content
+        scrollToBottom();
     }
 
-    async function outputBlog() {
-        try {
-            const response = await fetch('https://dev.to/api/articles?username=JPDengler'); 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+// Blog function
+async function outputBlog() {
+    try {
+        const response = await fetch('https://dev.to/api/articles?username=jpdengler');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const articles = await response.json();
+        let blogOutput = 'Here are my latest blog posts from DEV Community:';
+        articles.slice(0, 3).forEach(article => {
+            let title = wordWrap(`${article.title}`, 70);
+            let description = wordWrap(article.description, 70);
+            let url = wordWrap(article.url, 70);
+            blogOutput += `\n<a href="${article.url}" target="_blank" class="blog-title">${title}</a>\n${description}\n--------------------------------------------------------------------`;
+        });
+        output(blogOutput.trim());
+    } catch (error) {
+        console.error('Error fetching blog posts:', error);
+        output(`Error fetching blog posts: ${error.message}`);
+    }
+}
+
+// Function to wrap words after a certain number of characters
+function wordWrap(str, maxWidth) {
+    let newLineStr = "\n";
+    let res = '';
+    while (str.length > maxWidth) {                 
+        let found = false;
+        // Inserts new line at the last space within the line width
+        for (let i = maxWidth - 1; i >= 0; i--) {
+            if (str.charAt(i) === ' ') {
+                res = res + [str.slice(0, i), newLineStr].join('');
+                str = str.slice(i + 1);
+                found = true;
+                break;
             }
-            const articles = await response.json();
-            let blogOutput = `
-            <pre>Here are my latest blog posts from DEV Community:</pre>
-            `;
-    
-            articles.slice(0, 3).forEach(article => { // Limit to 3 articles
-                blogOutput += `
-    <pre>Title: ${article.title}</pre>
-    <pre>Published: ${new Date(article.published_at).toDateString()}</pre>
-    <a href="${article.url}" target="_blank">Read more</a>
-                `;
-            });
-    
-            output(blogOutput);
-        } catch (error) {
-            console.error('Error loading blog posts:', error);
-            output(`Error loading blog posts: ${error.message}`);
+        }
+        // If no space is found, insert new line at maxWidth position
+        if (!found) {
+            res += [str.slice(0, maxWidth), newLineStr].join('');
+            str = str.slice(maxWidth);
         }
     }
+    return res + str;
+}
 
     // Flicker effect
     function flickerButton() {
         const flickerImages = ['images/FLICKER1.png', 'images/FLICKER2.png'];
         const originalImage = powerButton.src.includes('ButtonOn') ? 'images/ButtonOn.png' : 'images/ButtonOff.png';
-
-        // Randomly select a flicker image
         const flickerImage = flickerImages[Math.floor(Math.random() * flickerImages.length)];
         powerButton.src = flickerImage;
 
-        // After a brief moment, revert to the original image
         setTimeout(() => {
             powerButton.src = originalImage;
-        }, 100); // Flicker duration - adjust this value to change the duration of the flicker
+        }, 100); 
     }
-
-    // Set an interval for the flicker effect to happen randomly
     setInterval(() => {
-        if (Math.random() < 0.5) { // Probability to flicker - adjust this value to change the frequency of flickers
+        if (Math.random() < 0.5) {
             flickerButton();
         }
-    }, 500); // Interval to check for flicker - adjust this value to change how often it checks for flickering
+    }, 500); 
 
 });
