@@ -111,4 +111,35 @@ a {
   a:hover, a:focus, a:active {
     color: #53bd38; }
 
+/* Blog Section */
+.blog-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid #15ff00;
+}
 
+.blog-section h2 {
+  color: #15ff00;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.blog-post {
+  margin-bottom: 2rem;
+}
+
+.blog-post h3 {
+  color: #53bd38;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post p {
+  color: #b5b5b5;
+  font-size: 1rem;
+}
+
+.blog-post a {
+  color: #53bd38;
+  text-decoration: underline;
+}

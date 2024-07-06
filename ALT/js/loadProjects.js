@@ -26,4 +26,34 @@ async function loadProjects() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadProjects);
+async function outputBlog() {
+    try {
+        const response = await fetch('https://dev.to/api/articles?username=jpdengler');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const articles = await response.json();
+        const blogContainer = document.getElementById('blog-posts');
+        let blogOutput = '';
+
+        articles.slice(0, 3).forEach(article => {
+            blogOutput += `
+                <div class="blog-post">
+                    <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+                    <p>${article.description}</p>
+                </div>
+            `;
+        });
+
+        blogContainer.innerHTML = blogOutput;
+    } catch (error) {
+        console.error('Error fetching blog posts:', error);
+        const blogContainer = document.getElementById('blog-posts');
+        blogContainer.innerHTML = `<p>Error fetching blog posts: ${error.message}</p>`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadProjects();
+    outputBlog();
+});
