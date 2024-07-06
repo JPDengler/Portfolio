@@ -12,6 +12,7 @@ This portfolio is designed to provide a comprehensive overview of my professiona
 - CSS3
 - SCSS
 - JavaScript
+- GitHub Pages for hosting
 
 ## Features
 
@@ -64,7 +65,6 @@ open index.html
 ```
 
 ## Contact
-<br/>
 Feel free to reach out to me through the following channels:
 <br/>
 Email: Jp.dengler@gmail.com
