@@ -305,11 +305,14 @@ async function outputBlog() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const articles = await response.json();
-        let blogOutput = 'Here are my latest blog posts from DEV Community:\n\n';
+        let blogOutput = 'Here are my latest blog posts from DEV Community:';
+        
         articles.slice(0, 5).forEach(article => {
-            blogOutput += `\n\n<a href="${article.url}" target="_blank" class="blog-title">${article.title}</a>
-<p class="blog-description">${article.description}</p>\n\n--------------------------------------------------------------------`;
+            let wrappedTitle = wordWrap(article.title, 70);
+            let wrappedDescription = wordWrap(article.description, 70);
+            blogOutput += `\n\n<a href="${article.url}" target="_blank" class="blog-title">${wrappedTitle}</a>\n${wrappedDescription}\n--------------------------------------------------------------------`;
         });
+        
         output(blogOutput.trim());
     } catch (error) {
         console.error('Error fetching blog posts:', error);
@@ -320,29 +323,32 @@ async function outputBlog() {
 // Function to wrap words after a certain number of characters
 function wordWrap(text, maxWidth) {
     let result = '';
-    while (text.length > maxWidth) {
-        let found = false;
-        for (let i = maxWidth - 1; i >= 0; i--) {
-            if (text.charAt(i) === ' ') {
-                result += text.slice(0, i) + '\n';
-                text = text.slice(i + 1);
-                found = true;
-                break;
+    let lines = text.split('\n');
+    lines.forEach(line => {
+        while (line.length > maxWidth) {
+            let found = false;
+            for (let i = maxWidth - 1; i >= 0; i--) {
+                if (line.charAt(i) === ' ') {
+                    result += line.slice(0, i) + '\n';
+                    line = line.slice(i + 1);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                result += line.slice(0, maxWidth) + '\n';
+                line = line.slice(maxWidth);
             }
         }
-        if (!found) {
-            result += text.slice(0, maxWidth) + '\n';
-            text = text.slice(maxWidth);
-        }
-    }
-    result += text;
+        result += line + '\n';
+    });
     return result;
 }
 
 // Update the output function to use wordWrap
 function output(text) {
     const pre = document.createElement('pre');
-    pre.innerHTML = wordWrap(text, 70); // Adjust 70 to your preferred max width
+    pre.innerHTML = wordWrap(text, 70); 
     outputElement.appendChild(pre);
     scrollToBottom();
 }
