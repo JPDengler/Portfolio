@@ -1,8 +1,8 @@
 .project-item {
-    margin-bottom: 20px; /* Adjust the value to control the space between projects */
+    margin-bottom: 20px;
 }
 
 .project-item a {
     display: block;
-    margin-bottom: 10px; /* Add some space below the "View Project" link */
+    margin-bottom: 10px;
 }
