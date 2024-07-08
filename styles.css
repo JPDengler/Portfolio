@@ -1,206 +1,233 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+/* Reset margin and padding for body and html, set height to 100%, hide overflow, and center content */
+body, html {    
+    margin: 0;    
+    padding: 0;    
+    height: 100%;    
+    overflow: hidden;    
+    display: flex;    
+    justify-content: center;    
     align-items: center;
 }
 
-#background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+/* Background container settings: fixed position, full width and height, cover background, centered, behind other elements */
+#background-container {    
+    position: fixed;    
+    top: 0;    
+    left: 0;    
+    width: 100%;    
+    height: 100%;    
+    background-size: cover;    
+    background-position: center;    
     z-index: -1;
 }
 
-body {
-    background-color: #000d03;
+/* Body settings: black background color, monospace font */
+body {    
+    background-color: #000d03;    
     font-family: 'Courier New', monospace;
 }
 
-.container {
-    width: 100vw;
-    max-width: 100vw;
-    aspect-ratio: 1.5;
-    left: 16%;
+/* Container settings: full viewport width, fixed aspect ratio, positioned relative to the left */
+.container {    
+    width: 100vw;    
+    max-width: 100vw;    
+    aspect-ratio: 1.5;    
+    left: 16%;    
     position: relative;
 }
 
-.monitor {
-    width: 65%;
-    height: 70%;
-    top: 15%;
-    position: relative;
-    overflow: hidden;
-    z-index: 1; 
-    display: flex;
+/* Monitor settings: relative position, flex column layout, overflow hidden */
+.monitor {    
+    width: 65%;    
+    height: 70%;    
+    top: 15%;    
+    position: relative;    
+    overflow: hidden;    
+    z-index: 1;     
+    display: flex;    
     flex-direction: column;
 }
 
-#black-background {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    top: 7%;
-    left: 5%;
-    background-color: black;
-    z-index: 1.5; 
+/* Black background settings: absolute position, black color, behind other elements */
+#black-background {    
+    position: absolute;    
+    width: 90%;    
+    height: 90%;    
+    top: 7%;    
+    left: 5%;    
+    background-color: black;    
+    z-index: 1.5;
 }
 
-.monitor-border {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 4; 
+/* Monitor border settings: absolute position, full size, pointer events disabled */
+.monitor-border {    
+    position: absolute;    
+    width: 100%;    
+    height: 100%;    
+    top: 0;    
+    left: 0;    
+    z-index: 4;     
     pointer-events: none; /* Ensure the border does not block clicks */
 }
 
-#terminal-background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    height: 90%;
-    transform: translate(-50%, -50%);
-    z-index: 2; 
+/* Terminal background video settings: absolute position, centered, cover object fit */
+#terminal-background-video {    
+    position: absolute;    
+    top: 50%;    
+    left: 50%;    
+    width: 90%;    
+    height: 90%;    
+    transform: translate(-50%, -50%);    
+    z-index: 2;     
     object-fit: cover;
 }
 
-#terminal {
-    display: none;
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    width: 100%;
-    height: 70%;
-    padding: 0px;
-    box-sizing: border-box;
-    overflow-y: auto; /* Allow vertical scrolling */
-    z-index: 3; 
-    color: #00FF00;
-    text-shadow: 0 0 5px #00FF00;
-    font-size: 1vw;
-    line-height: 1.2vw;
-    -ms-overflow-style: none;  /* IE and Edge */
+/* Terminal settings: hidden by default, absolute position, padding, box-sizing, vertical scrolling, green text with shadow */
+#terminal {    
+    display: none;    
+    position: absolute;    
+    top: 15%;    
+    left: 15%;    
+    width: 100%;    
+    height: 70%;    
+    padding: 0px;    
+    box-sizing: border-box;    
+    overflow-y: auto; /* Allow vertical scrolling */    
+    z-index: 3;     
+    color: #00FF00;    
+    text-shadow: 0 0 5px #00FF00;    
+    font-size: 1vw;    
+    line-height: 1.2vw;    
+    -ms-overflow-style: none;  /* IE and Edge */    
     scrollbar-width: none;  /* Firefox */
 }
 
-#terminal::-webkit-scrollbar {
-    display: none; 
+/* Hide scrollbar for terminal */
+#terminal::-webkit-scrollbar {    
+    display: none;
 }
 
-#terminal pre {
+/* Terminal pre settings: no margin */
+#terminal pre {    
     margin: 0;
 }
 
-#output {
-    flex-grow: 1;
-    margin: 0;
-    padding-right: 20px; 
-    white-space: pre-wrap; 
-    word-break: break-word; 
+/* Output settings: grow to fill space, padding, wrap text */
+#output {    
+    flex-grow: 1;    
+    margin: 0;    
+    padding-right: 20px;     
+    white-space: pre-wrap;     
+    word-break: break-word;
 }
 
-#input-line {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+/* Input line settings: flex layout, centered vertically, margin */
+#input-line {    
+    display: flex;    
+    align-items: center;    
+    margin-top: 10px;    
     margin-bottom: 10px;
 }
 
-#input {
-    background-color: transparent;
-    color: #00FF00;
-    border: none;
-    outline: none;
-    width: calc(100% - 10px);
-    padding: 5px;
-    font-family: 'Courier New', monospace;
+/* Input settings: transparent background, green text, no border, full width, padding, monospace font */
+#input {    
+    background-color: transparent;    
+    color: #00FF00;    
+    border: none;    
+    outline: none;    
+    width: calc(100% - 10px);    
+    padding: 5px;    
+    font-family: 'Courier New', monospace;    
     font-size: 1.5vw;
 }
 
-pre {
-    font-family: 'Courier New', monospace;
-    color: #00FF00;
-    text-shadow: 0 0 5px #00FF00;
+/* Pre settings: monospace font, green text with shadow, no margin */
+pre {    
+    font-family: 'Courier New', monospace;    
+    color: #00FF00;    
+    text-shadow: 0 0 5px #00FF00;    
     margin: 0;
 }
 
-a {
-    color: #00FF00;
-    text-decoration: underline;
+/* Anchor settings: green color, underline, bold */
+a {    
+    color: #00FF00;    
+    text-decoration: underline;    
     font-weight: bold;
 }
 
-a:hover {
+/* Anchor hover settings: cyan color */
+a:hover {    
     color: #00FFFF;
 }
 
-#power-button {
-    position: absolute; 
-    width: 5%; 
-    height: auto;
-    top: 32.3%; 
-    left: 91.7%; 
-    transform: translate(-50%, -50%);
-    z-index: 5; 
+/* Power button settings: absolute position, small size, cursor pointer */
+#power-button {    
+    position: absolute;     
+    width: 5%;     
+    height: auto;    
+    top: 32.3%;     
+    left: 91.7%;     
+    transform: translate(-50%, -50%);    
+    z-index: 5;     
     cursor: pointer;
 }
 
-.project-item {
-    margin-bottom: 50px; 
+/* Project item settings: bottom margin */
+.project-item {    
+    margin-bottom: 50px;
 }
 
-.list-inline {
-    list-style: none; 
-    padding: 0;
+/* List inline settings: no list style, no padding, no margin */
+.list-inline {    
+    list-style: none;     
+    padding: 0;    
     margin: 0;
 }
 
-.list-inline-item {
-    margin: 0 2rem; 
+/* List inline item settings: horizontal margin */
+.list-inline-item {    
+    margin: 0 2rem;
 }
 
-.list-inline-item i {
-    color: #00ff00; 
-    font-size: 3rem; 
+/* List inline item icon settings: green color, large size */
+.list-inline-item i {    
+    color: #00ff00;     
+    font-size: 3rem;
 }
 
-#skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left; 
+/* Skills container settings: flex layout, wrap, left alignment */
+#skills-container {    
+    display: flex;    
+    flex-wrap: wrap;    
+    justify-content: left;     
     align-items: left;
 }
 
-#skills-container .list-inline-item {
-    flex: 0 0 15%; 
-    text-align: left;
-    margin-right: 5vw; 
+/* Skills container item settings: flex basis, left alignment, right margin */
+#skills-container .list-inline-item {    
+    flex: 0 0 15%;     
+    text-align: left;    
+    margin-right: 5vw;
 }
 
-.blog-title, .blog-description {
-    display: block;
-    margin: 0;
-    margin-left: 1em; 
+/* Blog title and description settings: block display, margin */
+.blog-title, .blog-description {    
+    display: block;    
+    margin: 0;    
+    margin-left: 1em;
 }
 
-.blog-title {
-    font-weight: bold;
-    margin-top: 1rem; 
+/* Blog title settings: bold, top margin */
+.blog-title {    
+    font-weight: bold;    
+    margin-top: 1rem;
 }
 
-.blog-description {
-    margin-top: 0.5rem; 
-    white-space: pre-wrap; 
-    word-break: break-word;
+/* Blog description settings: top margin, wrap text, bottom margin */
+.blog-description {    
+    margin-top: 0.5rem;     
+    white-space: pre-wrap;     
+    word-break: break-word;    
     margin-bottom: 1rem;
 }
