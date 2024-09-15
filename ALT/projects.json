@@ -71,6 +71,24 @@
         "description": "As simple as it is, I enjoyed designing my README.md for my \nGitHub profile and learning more about API-tokens by \nusing public access widgets.",
         "link": "https://github.com/JPDengler/JPDengler",              
         "showcase": false
+      },
+      {
+        "title": "Buffer Overflow Activity",
+        "description": "A simple buffer overflow activity to demonstrate the importance of \nbuffer overflow protection.",
+        "link": "https://github.com/JPDengler/Buffer-Overflow-Activity",              
+        "showcase": true
+      },
+      {
+        "title": "SQL Injection Project Practice",
+        "description": "A simple SQL injection project to demonstrate the importance of \nSQL injection protection.",
+        "link": "https://github.com/JPDengler/SQL-Injection-Project-Practice",              
+        "showcase": true
+      },
+      {
+        "title": "MNIST Handwritten Digit Classifcation using Keras",
+        "description": "A simple project to classify handwritten digits using the MNIST dataset.",
+        "link": "https://github.com/JPDengler/MNIST-Dataset-Assignment",
+        "showcase": true
       }
     ]
   }
