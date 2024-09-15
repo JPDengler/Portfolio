@@ -1,4 +1,4 @@
-# Joseph Dengler's Portfolio
+# Personal Portfolio
 
 Welcome to my portfolio repository. This project showcases my work and skills in software development, including various projects, experiences, and educational background.
 
