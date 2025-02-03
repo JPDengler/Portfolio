@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     - skills : some of my most used languages and tools.
     - awards : recent accomplishments, mostly academically
     - blog : My latest Dev.to posts
+    - player : ???
                 `);
                 break;
 
@@ -63,43 +64,64 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'whois':
                 output(`
 
-* Hi, I'm Joey!*
+* Hi, I'm Joey! *
 ----------------------------------------------------------------------
-An entry-level developer with a strong foundation in computer 
-science and a passion for creating impactful software solutions. 
-I am currently pursuing a degree in Computer Science with a 
-concentration in Software Engineering at Southern New Hampshire 
-University, where I've consistently excelled academically, 
-earning distinctions such as Alpha Sigma Lambda, Dean’s List, 
-President’s List, and Honor Roll. I have currently 
-and maintained since my beginning maintained a 4.0GPA a verage.
-                    
-With professional expertise in languages like C++, Java, 
-JavaScript, Python, and MySQL, I bring a diverse skill 
-set to the table. My experience spans from troubleshooting 
-complex electronic systems to developing robust software 
-applications. I've worked on various projects, including 
-"Project Magpie," this portfolio project, mock app prototypes 
-(key components of my studies at SNHU.) Recently, I have 
-been building wireframe designs based on UX/UI fundamentals 
-and both Android and Apple UI guidelines, ensuring a seamless 
-user experience. I have also been working on client and server 
-development on Linux OS utilizing MongoDB. I also enjoy modding 
-video games including Skyrim and creating IOT projects such as 
-my real life 'BMO' robot, check out my projects to take a look!
-                    
+An Automation Technician with software development experience, 
+specializing in troubleshooting, maintaining, and optimizing 
+industrial automation systems. I currently work at Bridor USA, 
+where I handle PLC programming (Siemens & Allen-Bradley), 
+servo drive configuration, safety relays, industrial sensors, 
+and electrical diagnostics within high-speed production 
+environments. I am also developing an internal admin dashboard 
+to streamline access to documentation, inventory, and work history.
+
+I am completing my Bachelor’s Degree in Computer Science with 
+a concentration in Software Engineering at Southern New 
+Hampshire University, graduating March 1st, 2025. Throughout 
+my studies, I have maintained a 4.0 GPA, earning distinctions 
+such as Alpha Sigma Lambda, Dean’s List, President’s List, 
+and Honor Roll. My academic experience has strengthened my 
+problem-solving skills, bridging software development and 
+automation technology.
+
+My technical expertise spans C++, Java, JavaScript, Python, 
+and MySQL, with experience in logic programming, embedded 
+systems, and industrial automation scripting. Beyond my 
+professional work, I have contributed to various software 
+and hardware projects, including "Project Magpie" (this 
+portfolio), mock app prototypes, and IoT projects like 
+"Project BMO," a voice-interactive robot using Raspberry Pi 
+and OpenAI.
+                                        
 Previously, I worked as a Level Seven Quality Assurance 
-Technician at Radwell International, where I honed my skills 
-in troubleshooting and testing electronic systems. Now, as I 
-transition into the development field, I'm eager to leverage 
-my technical knowledge and problem-solving abilities to 
-contribute to dynamic and innovative projects. I'm 
-actively seeking new opportunities to grow as a developer 
-and make a meaningful impact in the tech industry.`);
+Technician at Radwell International, focusing on troubleshooting 
+and testing electronic systems, further refining my analytical 
+and problem-solving skills. 
+
+I am always looking to expand my expertise in both automation 
+and software development. Whether integrating PLC programming 
+with data-driven applications or exploring new software-driven 
+industrial solutions, I thrive in solving complex technical 
+challenges. `);
                 break;
 
             case 'exp':
                 output(`
+
+* Automation Technician *
+----------------------------------------------------------------------
+@ Bridor USA @
+DURATION: September 2024 - Present
+INFO: Troubleshoot, maintain, and optimize industrial automation 
+systems in a high-demand production environment. Work with 
+**PLC systems** (Siemens & Allen-Bradley), **servo drives**, **safety 
+relays**, and **industrial sensors** to ensure efficient operations. 
+Program and debug ladder logic, function block, and structured text 
+for production lines. Develop and implement an **admin dashboard website** 
+for the maintenance department to streamline access to documentation, 
+inventory, and work history. Diagnose electrical issues in **control 
+cabinets, power distribution, and safety circuits**, ensuring reliable 
+and safe operations.
 
 * QA Technician VII *
 ----------------------------------------------------------------------
@@ -156,17 +178,63 @@ GPA: 3.6
                     `)
                 break;
 
-            case 'skills':
-                outputSkills();
-                output(`
+                case 'skills':
+                    outputSkills();
+                    output(`
+                
+          * Automation & Industrial Control Systems *
+----------------------------------------------------------------------
++ PLC Programming (Siemens S7, TIA Portal, Allen-Bradley RSLogix)
++ Servo Drive Configuration & Tuning (Lenze, Allen-Bradley, Siemens)
++ Industrial Sensor Integration (Photoelectric, Proximity, Encoders)
++ Safety Relay Wiring & Troubleshooting (PILZ, Allen-Bradley Guardmaster)
++ Motor Control Systems (VFDs, Contactors, Starters)
++ HMI Design & Configuration (Siemens, FactoryTalk)
++ Ladder Logic, Function Block, and Structured Text Programming
++ Industrial Network Protocols (PROFINET, EtherNet/IP, MODBUS)
++ Developing Admin Dashboards for Maintenance Operations
 
-+ Research and Layout Using Lucidchart/Lucidspark
-+ Creating Flowcharts and Visual Plans
-+ Cross Browser Testing & Debugging
-+ Collaborating with Cross-Functional Teams
-+ Agile Development & Scrum
-+ Continuous Feedback and Iteration
-+ Final Review and Deployment`);
+                * Electrical & Troubleshooting *
+----------------------------------------------------------------------
++ Electrical Cabinet Wiring & Layout Analysis
++ Circuit Diagnostics & Fault Isolation
++ Electrical Panel Design & Modification
++ Reading & Interpreting Schematics (Relay Logic, Control Diagrams)
++ Low-Voltage Power Distribution (24VDC, 120VAC, 480VAC Systems)
++ Using Oscilloscopes, Multimeters, and Signal Testers
++ Emergency Stop Circuits and Safety Interlocks
+
+              * Software Development & Programming *
+----------------------------------------------------------------------
++ Full-Stack Development (Java, JavaScript, Python, C++, MySQL, MongoDB)
++ Client-Server Architecture & API Development
++ Embedded Systems Programming (Raspberry Pi, Arduino)
++ Web Development (React, HTML, CSS, Bootstrap)
++ Secure Coding Practices & Cybersecurity (CS-405 Background)
++ Writing & Optimizing SQL Queries
++ Debugging & Unit Testing (JUnit, PyTest, Visual Studio)
++ Version Control & CI/CD (Git, GitHub Actions, Jenkins)
+                
+                * Debugging & Problem-Solving *
+----------------------------------------------------------------------
++ Root Cause Analysis for Industrial & Software Issues
++ On-Site Troubleshooting of Electrical & Control Systems
++ Debugging & Optimizing PLC & Servo Control Code
++ Cross-Browser Testing & Web Application Debugging
++ Continuous Integration & Automated Testing Strategies
++ Reverse Engineering & Legacy Code Refactoring
+
+         * Technical Planning & Team Collaboration *
+----------------------------------------------------------------------
++ Research & Layout Using Lucidchart/Lucidspark
++ Creating Flowcharts, Schematics, & System Diagrams
++ Collaborating with Cross-Functional Teams (Engineering, IT, Maintenance)
++ Agile Development & Scrum Methodologies
++ Documenting System Changes & Standard Operating Procedures
++ Process Optimization & Efficiency Improvements
++ Continuous Feedback & Iteration
++ Final Review & Deployment
+                `);
                 break;
 
             case 'awards':
