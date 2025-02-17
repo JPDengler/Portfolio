@@ -1,43 +1,45 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const inputElement = document.getElementById('input');
     const outputElement = document.getElementById('output');
     const powerButton = document.getElementById('power-button');
     const terminal = document.getElementById('terminal');
     const terminalBackgroundVideo = document.getElementById('terminal-background-video');
-    let powerOn = false; // Track the state of the power button
+    let powerOn = false;
+    let terminalData = {};
+    let hudActive = false;
+    let hudElement;
 
     // Load JSON Data
-    let terminalData = {};
     fetch('data/terminalInfo.json')
         .then(response => response.json())
         .then(data => terminalData = data)
         .catch(error => console.error('Error loading terminal data:', error));
 
-    inputElement.addEventListener('keydown', function(event) {
+    inputElement.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             const input = inputElement.value.trim().toLowerCase();
             if (input) {
                 output(`> ${input}`);
                 processCommand(input);
                 inputElement.value = '';
-                scrollToBottom(); 
+                scrollToBottom();
             }
         }
     });
 
-    powerButton.addEventListener('click', function() {
+    powerButton.addEventListener('click', function () {
         if (powerOn) {
-            powerButton.src = 'images/ButtonOff.png'; 
+            powerButton.src = 'images/ButtonOff.png';
             terminal.style.display = 'none';
-            terminalBackgroundVideo.style.display = 'none'; 
-            powerOn = false; 
+            terminalBackgroundVideo.style.display = 'none';
+            powerOn = false;
             clearOutput();
         } else {
-            powerButton.src = 'images/ButtonOn.png'; 
-            terminal.style.display = 'block'; 
+            powerButton.src = 'images/ButtonOn.png';
+            terminal.style.display = 'block';
             terminalBackgroundVideo.style.display = 'block';
-            powerOn = true; 
-            scrollToBottom(); 
+            powerOn = true;
+            scrollToBottom();
         }
     });
 
@@ -60,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             await showProjects('archive');
         } else if (cmd === 'blog') {
             outputBlog();
+        } else if (cmd === 'hud') {
+            toggleHUD();
         } else {
             output(`Command not recognized: ${cmd}\nPlease type HELP for assistance.`);
         }
@@ -104,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function showProjects(type) {
         try {
-            const response = await fetch('ALT/projects.json'); 
+            const response = await fetch('ALT/projects.json');
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
             const data = await response.json();
@@ -168,20 +172,46 @@ document.addEventListener('DOMContentLoaded', function() {
         return result;
     }
 
-    function flickerButton() {
-        const flickerImages = ['images/FLICKER1.png', 'images/FLICKER2.png'];
-        const originalImage = powerButton.src.includes('ButtonOn') ? 'images/ButtonOn.png' : 'images/ButtonOff.png';
-        const flickerImage = flickerImages[Math.floor(Math.random() * flickerImages.length)];
-        powerButton.src = flickerImage;
+    // HUD Feature: Toggles real-time GitHub stats, weather, and time
+    async function toggleHUD() {
+        if (hudActive) {
+            if (hudElement) {
+                hudElement.remove();
+            }
+            hudActive = false;
+        } else {
+            hudElement = document.createElement("div");
+            hudElement.id = "hud-overlay";
+            document.body.appendChild(hudElement);
 
-        setTimeout(() => {
-            powerButton.src = originalImage;
-        }, 100); 
+            hudActive = true;
+            updateHUD();
+            setInterval(updateHUD, 60000);
+        }
     }
 
-    setInterval(() => {
-        if (Math.random() < 0.5) {
-            flickerButton();
-        }
-    }, 500); 
+    async function updateHUD() {
+        const response = await fetch("data/terminalInfo.json");
+        const data = await response.json();
+
+        const githubResponse = await fetch(data.github);
+        const github = await githubResponse.json();
+        const githubStats = `📦 Repos: ${github.public_repos} | ⭐ Stars: ${github.followers}`;
+
+        const weatherResponse = await fetch(data.weather);
+        const weather = await weatherResponse.json();
+        const temp = weather.main.temp;
+        const condition = weather.weather[0].description;
+
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+
+        hudElement.innerHTML = `
+            <div class="hud-glitch">
+                <p>⌚ ${timeString}</p>
+                <p>${githubStats}</p>
+                <p>🌦️ ${condition}, ${temp}°C</p>
+            </div>
+        `;
+    }
 });

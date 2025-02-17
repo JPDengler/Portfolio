@@ -230,3 +230,27 @@ a:hover {
     word-break: break-word;    
     margin-bottom: 1rem;
 }
+
+#hud-overlay {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #00ffcc;
+    font-family: "Courier New", monospace;
+    padding: 10px;
+    border: 1px solid #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
+    z-index: 1000;
+    text-transform: uppercase;
+}
+
+.hud-glitch {
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 5px #ff00ff; }
+    50% { text-shadow: -2px -2px 5px #00ffff; }
+    100% { text-shadow: 2px -2px 5px #ff00ff; }
+}
