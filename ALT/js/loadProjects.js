@@ -1,14 +1,20 @@
 async function loadProjects() {
     try {
-        const response = await fetch('projects.json'); // Ensure the correct path
-        const data = await response.json();
+        const response = await fetch('data/projects.json');  // Ensure file exists
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
+        const data = await response.json();
         const showcaseContainer = document.getElementById('showprojx');
         const archiveContainer = document.getElementById('archive-projects');
 
+        if (!showcaseContainer || !archiveContainer) {
+            console.error('Error: Project containers not found in the DOM.');
+            return;
+        }
+
         data.projects.forEach(project => {
             const projectElement = document.createElement('div');
-            projectElement.classList.add('project-item'); // Add the class for spacing
+            projectElement.classList.add('project-item');
             projectElement.innerHTML = `
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
@@ -18,9 +24,11 @@ async function loadProjects() {
             if (project.showcase) {
                 showcaseContainer.appendChild(projectElement);
             }
+
             const archiveElement = projectElement.cloneNode(true);
             archiveContainer.appendChild(archiveElement);
         });
+
     } catch (error) {
         console.error('Error loading projects:', error);
     }
